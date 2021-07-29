@@ -1,0 +1,39 @@
+.main {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    background: var(--background2);
+    transition: height 5s;
+
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        padding: 2px;
+
+        li{
+            list-style: disc;
+            margin: 0 15px;
+            
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            transition: letter-spacing .15s;
+
+
+            &:first-child{
+                list-style: none;
+            }
+            &:hover{
+                color: var(--background);
+                letter-spacing: 4px;
+            }
+        }
+    }
+}

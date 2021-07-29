@@ -1,0 +1,53 @@
+
+.main{
+    margin-top: 40px;
+    
+
+    h2{
+        color: #fff;
+
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 15px;
+        word-spacing: 10px;
+        text-transform: uppercase;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        margin: 0 20px;
+        width: 50vw;
+    }
+
+    hr{
+        width: 50vw;
+        margin: 0 10px;
+    }
+
+    section {
+        width: 100vw;
+        overflow: show;
+    }
+}
+
+@media (max-width: 1080px){
+    .main {
+        h2{
+            font-size: 0.8rem;
+            width: 80vw;
+        }
+        hr{
+            width: 80vw;
+        }
+    }
+}
+
+.filmes{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    list-style: none;
+    margin-top: 10px;
+}
