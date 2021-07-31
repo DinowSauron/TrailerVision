@@ -15,11 +15,13 @@
     border-bottom-right-radius: 40px;
 
     .mainLogo{
+        position: relative;
+        margin: 10px;
         margin-left: 15px;
-        padding: 10px;
         width: 180px;
-        height: 60px;
+        height: 45px;
     }
+
 
     button{
         position: relative;
@@ -72,13 +74,16 @@
 
     a {
         position: absolute;
+        display: block;
         width: 40%;
+        height: 14px;
         top: 60px;
         left: 0;
-        padding: 3px;
+        margin: 3px;
 
-        img {
+        .secondLogo{
             width: 100%;
+            
         }
     }
 }

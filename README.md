@@ -4,6 +4,10 @@
 
 
 
+## Notas pessoais:
+
+* Next somente aceita imagens pelo ``<Image/>``, do propio next, acesse ele pelo css via ``div img {}`` para colocar opções como object-fit, etc...
+
 ## Tecnologias Utilizadas:
 
 * Html

@@ -1,7 +1,7 @@
 import styles from "./footer.module.scss"
 
 
-export function FooterInfo(){
+export default function FooterInfo(){
     
 
     return(

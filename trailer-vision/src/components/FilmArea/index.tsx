@@ -1,8 +1,9 @@
 import styles from "./film-area.module.scss"
+import Image from 'next/image'
 import Film from "./Film"
 import { FilmAreaProps } from "./types"
 
-export function FilmArea(props: FilmAreaProps){
+export default function FilmArea(props: FilmAreaProps){
 
   
     
@@ -15,7 +16,7 @@ export function FilmArea(props: FilmAreaProps){
           <section>
             <ul className={styles.filmes}>
               <Film 
-                wideBanner="img1.jpg"
+                wideBanner="/img1.jpg"
                 filmName="Falcão e soldado invernal"
               />
 
