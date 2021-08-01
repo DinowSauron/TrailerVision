@@ -1,10 +1,6 @@
-
+import { Filmes } from "../../lib/indexTypes"
 
 export type FilmAreaProps = {
     genre: string;
-}
-
-export type FilmProps = {
-    filmName: string;
-    wideBanner: string;
+    filmData: Filmes;
 }

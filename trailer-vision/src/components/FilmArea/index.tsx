@@ -1,12 +1,11 @@
 import styles from "./film-area.module.scss"
+import { Filme } from "../../lib/indexTypes"
 import Image from 'next/image'
 import Film from "./Film"
 import { FilmAreaProps } from "./types"
 
 export default function FilmArea(props: FilmAreaProps){
 
-  
-    
 
     return(
         <div className={styles.main}>
@@ -15,10 +14,16 @@ export default function FilmArea(props: FilmAreaProps){
           <hr />
           <section>
             <ul className={styles.filmes}>
-              <Film 
-                wideBanner="/img1.jpg"
-                filmName="Falcão e soldado invernal"
-              />
+              
+              {props.filmData.results.map((filme) => {
+                return (
+                  <Film 
+                    backdrop_path={filme.backdrop_path}
+                    title={filme.title}
+                    popularity={filme.popularity}
+                  />
+                )
+              })}
 
             </ul>
           </section>

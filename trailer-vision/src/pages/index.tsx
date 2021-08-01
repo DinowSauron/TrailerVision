@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/index.module.scss';
-import { HomeProps } from "../lib/indexTypes" 
+import { Filmes, HomeProps } from "../lib/indexTypes" 
 
 import HeaderMenu from "../components/HeaderMenu";
 import FooterInfo from "../components/FooterInfo";
@@ -20,9 +20,9 @@ export default function Home(props: HomeProps) {
             <HeaderMenu/>
           </header>
 
-          <FilmArea genre="Lançamentos"/>
-          <FilmArea genre="Ficção Cientifica"/>
-          <FilmArea genre="Ação e Aventura"/>
+          <FilmArea genre="Em Breve" filmData={props.filmes.releases}/>
+          {/* <FilmArea genre="Ficção Cientifica"/>
+          <FilmArea genre="Ação e Aventura"/> */}
 
 
           <FooterInfo/>
@@ -39,13 +39,12 @@ import { GetIndexData } from "../lib/getIndexData"
 export const getStaticProps: GetStaticProps = async () => {
 
   const data = await GetIndexData();
-  console.log(data);
+  // console.log(data);
 
 
   return {
-    props: {
-      data,
-    },
+    props: data,
+
     revalidate: 10
   }
 

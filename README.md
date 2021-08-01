@@ -8,6 +8,8 @@
 
 * Next somente aceita imagens pelo ``<Image/>``, do propio next, acesse ele pelo css via ``div img {}`` para colocar opções como object-fit, etc...
 
+* Adicionar os servidores de fetch(para imagens) no next.config.js
+
 ## Tecnologias Utilizadas:
 
 * Html

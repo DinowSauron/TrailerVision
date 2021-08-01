@@ -1,8 +1,11 @@
+import { Filme } from "../../../lib/indexTypes"
+
 import styles from "./film.module.scss";
 import Image from 'next/image';
-import { FilmProps } from "../types";
 
-export default function FilmArea(props: FilmProps){
+export default function FilmArea(props: Filme){
+
+    const photoUrl = "https://image.tmdb.org/t/p/w500"
 
     return(
         <li className={styles.filme}>
@@ -10,9 +13,10 @@ export default function FilmArea(props: FilmProps){
             <span className={styles.filmBanner + " img"}>
                 <Image
                     layout="fill"
-                    src={props.wideBanner}
-                    alt={props.filmName}
+                    src={photoUrl + props.backdrop_path}
+                    alt={props.title}
                 />
+
             </span>
         </button>
         </li>

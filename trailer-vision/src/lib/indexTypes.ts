@@ -1,8 +1,9 @@
 
 export type Filme = {
-    adult: boolean;
+    // adult: boolean;
     backdrop_path: string;
-    
+    title: string;
+    popularity: number;
 }
 
 export type Filmes = {
@@ -14,7 +15,7 @@ export type Filmes = {
 
 export type HomeProps = {
     filmes: {
-        releases: Array<Filmes>;
+        releases: Filmes;
     };
 }
 
