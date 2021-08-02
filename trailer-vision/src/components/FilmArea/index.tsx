@@ -15,13 +15,9 @@ export default function FilmArea(props: FilmAreaProps){
           <section>
             <ul className={styles.filmes}>
               
-              {props.filmData.results.map((filme) => {
+              {props.filmData.results.map((currentFilme) => {
                 return (
-                  <Film 
-                    backdrop_path={filme.backdrop_path}
-                    title={filme.title}
-                    popularity={filme.popularity}
-                  />
+                  <Film filme={currentFilme}/>
                 )
               })}
 

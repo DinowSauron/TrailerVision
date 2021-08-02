@@ -27,7 +27,7 @@ export async function GetIndexData() {
     const data = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=pt-BR&region=BR&release_date.gte=${dateToday}&release_date.lte=${dateReleases}&with_release_type=2|3`)
     .then((res) => res.json());
 
-    console.log(data);
+    console.log("Data Requisitada");
 
 
     return {
