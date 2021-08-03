@@ -23,6 +23,15 @@ export default function FilmArea(props: FilmAreaProps){
 
             </ul>
           </section>
+          <div className={styles.leftPass}>
+            <span className="img">
+              <Image
+                layout="fill"
+                src="/img/play.png"
+                alt="Go To Left"
+              />
+            </span>
+          </div>
 
         </div>
     )

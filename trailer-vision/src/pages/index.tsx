@@ -21,11 +21,14 @@ export default function Home(props: HomeProps) {
           </header>
 
           <FilmArea genre="Em Breve" filmData={props.filmes.releases}/>
+          <FilmArea genre="Filmes Populares" filmData={props.filmes.releases}/>
           {/* <FilmArea genre="Ficção Cientifica"/>
           <FilmArea genre="Ação e Aventura"/> */}
 
 
+          <div className={styles.leftBarrier}></div>
           <FooterInfo/>
+
         </main>
 
     </div>

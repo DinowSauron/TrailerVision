@@ -16,8 +16,7 @@ export default function FilmArea(props: FilmAreaProps){
                     layout="fill"
                     src={photoUrl +""+ filme.poster_path}
                     alt={filme.title}
-                >
-                </Image>
+                />
             </span>
             <h3>{filme.title}</h3>
             <span className={styles.filmBanner + " img"}>

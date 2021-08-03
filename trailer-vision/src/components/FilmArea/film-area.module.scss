@@ -1,5 +1,6 @@
 
 .main{
+    position: relative;
     margin-top: 40px;
     
 
@@ -21,7 +22,7 @@
     }
 
     hr{
-        width: 50vw;
+        width: clamp(500px, 68vw, 1100px);
         margin: 0 10px;
     }
 
@@ -30,8 +31,40 @@
         overflow: show;
         margin-left: 20px;
     }
+
+    div.leftPass {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 90px;
+        height: 130%;
+        background: linear-gradient(-90deg, var(--background) 50%, #0000 100%);
+        z-index: 10;
+        
+       
+        span{
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            width: 30px;
+            height: 30px;
+
+            cursor: pointer;
+            opacity: .8;
+
+            div img{
+                object-fit: cover;
+            }
+            &:hover{
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+    }
 }
 
+
+//celular
 @media (max-width: 1080px){
     .main {
         h2{
