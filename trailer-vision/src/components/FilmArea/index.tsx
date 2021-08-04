@@ -7,32 +7,66 @@ import { FilmAreaProps } from "./types"
 export default function FilmArea(props: FilmAreaProps){
 
 
-    return(
-        <div className={styles.main}>
+  function handleScrollSection(SectionId: string,direction: "Dir" | "Esq"){
+    const scrollPos = document.getElementById(SectionId)?.scrollLeft || 0;
+    const widthRatio = document.getElementById('MainContent')?.getBoundingClientRect().width || 0;
+    if(direction === "Dir") {
+      const scrollPosition =  widthRatio / 1.25 + scrollPos;
+      document.getElementById(SectionId)?.scroll({top: 0 , left: scrollPosition, behavior: 'smooth'});
+      console.log('Iniciou', scrollPos, widthRatio, scrollPosition)
+
+    } else {
+      const scrollPosition =  widthRatio / 1.25 - scrollPos;
+      document.getElementById(SectionId)?.scroll({top: 0 , left: scrollPosition, behavior: 'smooth'});
+      console.log('Iniciou', scrollPos, widthRatio, scrollPosition)
+
+    }
+  }
+
+
+  return(
+    <div className={styles.main}>
+      
+      <h2>{props.genre}</h2>
+      <hr />
+      <div className={styles.rightPass + " " + styles.pass}>
+        <span 
+          className="img"
+          onClick={() => handleScrollSection(props.genre, "Esq")}
+        >
+          <Image
+            layout="fill"
+            src="/img/play.png"
+            alt="Go To Left"
+          />
+        </span>
+      </div>
+
+      <section id={props.genre}>
+        <ul className={styles.filmes}>
           
-          <h2>{props.genre}</h2>
-          <hr />
-          <section>
-            <ul className={styles.filmes}>
-              
-              {props.filmData.results.map((currentFilme) => {
-                return (
-                  <Film filme={currentFilme}/>
-                )
-              })}
+          {props.filmData.results.map((currentFilme) => {
+            return (
+              <Film filme={currentFilme} key={currentFilme.id}/>
+            )
+          })}
 
-            </ul>
-          </section>
-          <div className={styles.leftPass}>
-            <span className="img">
-              <Image
-                layout="fill"
-                src="/img/play.png"
-                alt="Go To Left"
-              />
-            </span>
-          </div>
+        </ul>
+      </section>
 
-        </div>
-    )
+      <div className={styles.leftPass + " " + styles.pass}>
+        <span 
+          className="img"
+          onClick={() => handleScrollSection(props.genre, "Dir")}
+        >
+          <Image
+            layout="fill"
+            src="/img/play.png"
+            alt="Go To Left"
+          />
+        </span>
+      </div>
+
+    </div>
+  )
 }

@@ -9,7 +9,9 @@ export default function FilmArea(props: FilmAreaProps){
     const filme = props.filme;
 
     return(
-        <li className={styles.filme}>
+        <li 
+            className={styles.filme} 
+        >
         <button>
             <span className={styles.filmPoster + " img"}>
                 <Image

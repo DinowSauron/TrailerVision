@@ -8,20 +8,26 @@ import FilmArea from "../components/FilmArea";
 
 
 export default function Home(props: HomeProps) {
+  const photoUrl = "https://image.tmdb.org/t/p/w500";
+
+  console.log('url(' + photoUrl + props.movies.newMovies.results[0].backdrop_path + ')')
   return (
-    <div className={styles.mainContent} >
+    <div 
+    className={styles.mainContent} 
+    style={{backgroundImage: 'url(' + photoUrl + props.movies.newMovies.results[0].backdrop_path + ')'}}
+    >
 
         <Head>
             <title> Home | Trailer Vision</title>
         </Head>
 
-        <main className={styles.filmContent}>
+        <main className={styles.filmContent} id="MainContent">
           <header>
             <HeaderMenu/>
           </header>
 
-          <FilmArea genre="Em Breve" filmData={props.filmes.releases}/>
-          <FilmArea genre="Filmes Populares" filmData={props.filmes.releases}/>
+          <FilmArea genre="Em Breve" filmData={props.movies.releases}/>
+          <FilmArea genre="Estreias Recentes" filmData={props.movies.newMovies}/>
           {/* <FilmArea genre="Ficção Cientifica"/>
           <FilmArea genre="Ação e Aventura"/> */}
 

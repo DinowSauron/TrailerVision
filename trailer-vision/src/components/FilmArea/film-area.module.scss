@@ -2,6 +2,7 @@
 .main{
     position: relative;
     margin-top: 40px;
+    margin-bottom: -45px;
     
 
     h2{
@@ -28,24 +29,51 @@
 
     section {
         width: 100vw;
-        overflow: show;
-        margin-left: 20px;
-    }
+        overflow: scroll;
+        padding: 10px 10px 20px 30px;
 
+
+
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+    div.rightPass{
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, var(--background) 50%, #0000 100%);
+
+        span{
+            top: 40%;
+            right: 45%;
+
+        }
+    }
     div.leftPass {
-        position: absolute;
         top: 0;
         right: 0;
+        background: linear-gradient(-90deg, var(--background) 50%, #0000 100%);
+
+        span{
+            top: 40%;
+            left: 45%;
+
+        }
+    }
+    div.pass{
+        position: absolute;
         width: 90px;
         height: 130%;
-        background: linear-gradient(-90deg, var(--background) 50%, #0000 100%);
+        
         z-index: 10;
         
        
         span{
             position: absolute;
             top: 40%;
-            left: 45%;
             width: 30px;
             height: 30px;
 

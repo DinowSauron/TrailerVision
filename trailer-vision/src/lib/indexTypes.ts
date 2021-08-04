@@ -16,8 +16,9 @@ export type Filmes = {
 }
 
 export type HomeProps = {
-    filmes: {
+    movies: {
         releases: Filmes;
+        newMovies: Filmes;
     };
 }
 
