@@ -3,23 +3,38 @@ import { Filme } from "../../lib/indexTypes"
 import Image from 'next/image'
 import Film from "./Film"
 import { FilmAreaProps } from "./types"
+import { useState } from "react"
 
 export default function FilmArea(props: FilmAreaProps){
+  const sectionId = props.genre;
+  const [needScroll, setNeedScroll] = useState(false);
 
 
-  function handleScrollSection(SectionId: string,direction: "Dir" | "Esq"){
-    const scrollPos = document.getElementById(SectionId)?.scrollLeft || 0;
+  function handleScrollSection(direction: "Right" | "Left"){
+    const ActualPosition = document.getElementById(sectionId)?.scrollLeft || 0;
     const widthRatio = document.getElementById('MainContent')?.getBoundingClientRect().width || 0;
-    if(direction === "Dir") {
-      const scrollPosition =  widthRatio / 1.25 + scrollPos;
-      document.getElementById(SectionId)?.scroll({top: 0 , left: scrollPosition, behavior: 'smooth'});
-      console.log('Iniciou', scrollPos, widthRatio, scrollPosition)
+    
+    if(direction === "Right") {
+      let targetPosition =  (widthRatio / 1.25) + ActualPosition;
+      document.getElementById(sectionId)?.scroll({top: 0 , left: targetPosition, behavior: 'smooth'});
+      console.log('Iniciou', ActualPosition, widthRatio, targetPosition)
 
     } else {
-      const scrollPosition =  widthRatio / 1.25 - scrollPos;
-      document.getElementById(SectionId)?.scroll({top: 0 , left: scrollPosition, behavior: 'smooth'});
-      console.log('Iniciou', scrollPos, widthRatio, scrollPosition)
+      let targetPosition =  Math.abs(widthRatio / 1.25 - ActualPosition);
+      if(ActualPosition < targetPosition) {
+        targetPosition = 0;
+      }
+      document.getElementById(sectionId)?.scroll({top: 0 , left: targetPosition, behavior: 'smooth'});
+      console.log('Iniciou', ActualPosition, widthRatio, targetPosition)
+    }
+  }
 
+  function verifyScroll(){
+    const ActualPosition = document.getElementById(sectionId)?.scrollLeft || 0;
+    if(ActualPosition > 4){
+      setNeedScroll(true);
+    }else{
+      setNeedScroll(false);
     }
   }
 
@@ -29,20 +44,10 @@ export default function FilmArea(props: FilmAreaProps){
       
       <h2>{props.genre}</h2>
       <hr />
-      <div className={styles.rightPass + " " + styles.pass}>
-        <span 
-          className="img"
-          onClick={() => handleScrollSection(props.genre, "Esq")}
-        >
-          <Image
-            layout="fill"
-            src="/img/play.png"
-            alt="Go To Left"
-          />
-        </span>
-      </div>
 
-      <section id={props.genre}>
+      <section id={props.genre}
+        onScroll={() => verifyScroll()}
+      >
         <ul className={styles.filmes}>
           
           {props.filmData.results.map((currentFilme) => {
@@ -53,11 +58,27 @@ export default function FilmArea(props: FilmAreaProps){
 
         </ul>
       </section>
-
-      <div className={styles.leftPass + " " + styles.pass}>
+      
+      <div 
+        className={styles.leftPass + " " + styles.pass}
+        style={needScroll ? ({}) : ({display: "none"})}
+      >
         <span 
           className="img"
-          onClick={() => handleScrollSection(props.genre, "Dir")}
+          onClick={() => handleScrollSection("Left")}
+        >
+          <Image
+            layout="fill"
+            src="/img/play.png"
+            alt="Go To Left"
+          />
+        </span>
+      </div>
+
+      <div className={styles.rightPass + " " + styles.pass}>
+        <span 
+          className="img"
+          onClick={() => handleScrollSection("Right")}
         >
           <Image
             layout="fill"

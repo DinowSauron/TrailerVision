@@ -3,9 +3,11 @@
     position: relative;
     margin-top: 40px;
     margin-bottom: -45px;
+
     
 
     h2{
+        position: relative;
         color: #fff;
 
         font-size: 1.6rem;
@@ -20,17 +22,22 @@
 
         margin: 0 20px;
         width: 50vw;
+        z-index: 12;
     }
 
     hr{
+        position: relative;
+        background-color: #fff;
         width: clamp(500px, 68vw, 1100px);
-        margin: 0 10px;
+        margin: 0px 20px;
+        z-index: 12;
     }
 
     section {
         width: 100vw;
         overflow: scroll;
         padding: 10px 10px 20px 30px;
+        // margin-top: 80px
 
 
 
@@ -41,39 +48,50 @@
             display: none;
         }
     }
-    div.rightPass{
+
+
+    div.leftPass{
+        display: block;
+        height: 100%;
         top: 0;
         left: 0;
         background: linear-gradient(90deg, var(--background) 50%, #0000 100%);
+        transition: all 1s;
 
         span{
-            top: 40%;
-            right: 45%;
-
+            top: 48%;
+            margin-left: 5px;
+            transform: rotate(180deg);
+            
+            &:hover{
+                transform: rotate(180deg) scale(1.1);
+            }
         }
     }
-    div.leftPass {
-        top: 0;
+    div.rightPass {
+        top: -15%;
+        height: 120%;
         right: 0;
         background: linear-gradient(-90deg, var(--background) 50%, #0000 100%);
 
         span{
-            top: 40%;
+            top: 53%;
             left: 45%;
-
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
     div.pass{
         position: absolute;
         width: 90px;
-        height: 130%;
+        // height: 120%;
         
         z-index: 10;
         
        
         span{
             position: absolute;
-            top: 40%;
             width: 30px;
             height: 30px;
 
@@ -85,7 +103,6 @@
             }
             &:hover{
                 opacity: 1;
-                transform: scale(1.1);
             }
         }
     }
@@ -97,6 +114,8 @@
     .main {
         h2{
             font-size: 0.8rem;
+            letter-spacing: 3px;
+            word-spacing: 0;
             width: 80vw;
         }
         hr{
@@ -112,4 +131,5 @@
 
     list-style: none;
     margin-top: 10px;
+    margin-bottom: 30px;
 }

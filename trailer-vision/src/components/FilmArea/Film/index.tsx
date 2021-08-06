@@ -8,6 +8,11 @@ export default function FilmArea(props: FilmAreaProps){
     const photoUrl = "https://image.tmdb.org/t/p/w500";
     const filme = props.filme;
 
+
+    if(!filme.poster_path || !filme.backdrop_path){
+        return (<> </>);
+    }
+
     return(
         <li 
             className={styles.filme} 
@@ -31,5 +36,5 @@ export default function FilmArea(props: FilmAreaProps){
             </span>
         </button>
         </li>
-    )
+    );
 }

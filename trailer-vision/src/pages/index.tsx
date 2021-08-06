@@ -25,14 +25,19 @@ export default function Home(props: HomeProps) {
           <header>
             <HeaderMenu/>
           </header>
+          
+          <section className={styles.moviesArea}>
+            <FilmArea genre="Populares na Trailer Vision" filmData={props.movies.mostPopular}/>
+            <FilmArea genre="Ficção Cientifica" filmData={props.movies.genSciFi}/>
+            <FilmArea genre="Filmes de Guerra" filmData={props.movies.genWar}/>
+            <FilmArea genre="Filmes de Ação" filmData={props.movies.genAction}/>
+            <FilmArea genre="Em Breve" filmData={props.movies.releases}/>
+            <FilmArea genre="Estreias Recentes" filmData={props.movies.newMovies}/>
+          </section>
 
-          <FilmArea genre="Em Breve" filmData={props.movies.releases}/>
-          <FilmArea genre="Estreias Recentes" filmData={props.movies.newMovies}/>
           {/* <FilmArea genre="Ficção Cientifica"/>
           <FilmArea genre="Ação e Aventura"/> */}
 
-
-          <div className={styles.leftBarrier}></div>
           <FooterInfo/>
 
         </main>

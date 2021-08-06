@@ -19,6 +19,10 @@ export type HomeProps = {
     movies: {
         releases: Filmes;
         newMovies: Filmes;
+        mostPopular: Filmes;
+        genAction: Filmes;
+        genSciFi: Filmes;
+        genWar: Filmes;
     };
 }
 

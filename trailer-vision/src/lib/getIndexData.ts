@@ -22,6 +22,19 @@ function getDiscoverURL(minDay: string, MaxDay: string) {
     return `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=pt-BR&region=BR&release_date.gte=${minDay}&release_date.lte=${MaxDay}&with_release_type=2|3`
 }
 
+function getPopularURL(){
+    const apiKey = process.env.API_KEY;
+
+    return `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR&region=BR&page=1`
+}
+
+
+function getGenreURL(genre: number){
+    //https://api.themoviedb.org/3/genre/movie/list?api_key={}&language=pt-BR&id=35
+    const apiKey = process.env.API_KEY;
+
+    return `https://api.themoviedb.org/3/genre/${genre}/movies?api_key=${apiKey}&language=pt-BR&region=BR`
+}
 
 
 // Main Function
@@ -33,6 +46,10 @@ export async function GetIndexData() {
     const data = {
         releases: await fetch(getDiscoverURL(dateToday, dateNextMonths)).then((res) => res.json()),
         newMovies: await fetch(getDiscoverURL(datePrevMonths, dateToday)).then((res) => res.json()),
+        mostPopular: await fetch(getPopularURL()).then((res) => res.json()),
+        genSciFi: await fetch(getGenreURL(878)).then((res) => res.json()),
+        genAction: await fetch(getGenreURL(28)).then((res) => res.json()),
+        genWar: await fetch(getGenreURL(10752)).then((res) => res.json()),
     }
 
     console.log("---Data Requisitada---");
