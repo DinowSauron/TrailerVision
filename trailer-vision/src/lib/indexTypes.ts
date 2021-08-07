@@ -1,6 +1,6 @@
 
 export type Filme = {
-    // adult: boolean;
+    adult: boolean;
     backdrop_path: string;
     poster_path: string;
     title: string;
@@ -23,10 +23,19 @@ export type HomeProps = {
         genAction: Filmes;
         genSciFi: Filmes;
         genWar: Filmes;
+        genDrama: Filmes;
+        genCrime: Filmes;
+        genAnimation: Filmes;
+        genAdventure: Filmes;
+        genMistery: Filmes;
+        genFamily: Filmes;
+        genFantasy: Filmes;
+        genWestern: Filmes;
     };
 }
 
 export type FilmAreaProps = {
     filme: Filme;
+    index: number;
 }
 

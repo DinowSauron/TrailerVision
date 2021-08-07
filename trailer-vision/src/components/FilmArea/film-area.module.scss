@@ -21,7 +21,7 @@
         text-overflow: ellipsis;
 
         margin: 0 20px;
-        width: 50vw;
+        width: 58%;
         z-index: 12;
     }
 
@@ -34,7 +34,8 @@
     }
 
     section {
-        width: 100vw;
+        position: relative;
+        width: 100%;
         overflow: scroll;
         padding: 10px 10px 20px 30px;
         // margin-top: 80px
@@ -46,6 +47,12 @@
 
         &::-webkit-scrollbar{
             display: none;
+        }
+
+        .space {
+            display: block;
+            width: 500px;
+            height: 100%;
         }
     }
 
@@ -108,7 +115,6 @@
     }
 }
 
-
 //celular
 @media (max-width: 1080px){
     .main {
@@ -116,11 +122,23 @@
             font-size: 0.8rem;
             letter-spacing: 3px;
             word-spacing: 0;
-            width: 80vw;
+            width: 80%;
         }
         hr{
-            width: 80vw;
+            width: 80%;
         }
+    }
+}
+
+.reduceWidth {
+    h2{
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+        word-spacing: 0;
+        width: 80%;
+    }
+    hr{
+        width: 80%;
     }
 }
 

@@ -50,6 +50,14 @@ export async function GetIndexData() {
         genSciFi: await fetch(getGenreURL(878)).then((res) => res.json()),
         genAction: await fetch(getGenreURL(28)).then((res) => res.json()),
         genWar: await fetch(getGenreURL(10752)).then((res) => res.json()),
+        genDrama: await fetch(getGenreURL(18)).then((res) => res.json()),
+        genCrime: await fetch(getGenreURL(80)).then((res) => res.json()),
+        genAnimation: await fetch(getGenreURL(16)).then((res) => res.json()),
+        genAdventure: await fetch(getGenreURL(12)).then((res) => res.json()),
+        genMistery: await fetch(getGenreURL(9648)).then((res) => res.json()),
+        genFamily: await fetch(getGenreURL(10751)).then((res) => res.json()),
+        genFantasy: await fetch(getGenreURL(14)).then((res) => res.json()),
+        genWestern: await fetch(getGenreURL(37)).then((res) => res.json()),
     }
 
     console.log("---Data Requisitada---");

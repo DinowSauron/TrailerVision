@@ -107,7 +107,40 @@
     }
 }
 
-// Celular
+
+//same as smartphone
+.reduceWidth {
+    button{
+        width: 100px;
+        height: 150px;
+        margin: 0 20px;
+        transform-origin: center;
+
+        .filmPoster {
+            width: 100px;
+            left: 0;
+        }
+        .filmBanner {
+            width: 0;
+        }
+        h3 {
+            // width: 150%;
+            bottom: -22%;
+            left: -25%;
+            text-align: center;
+            font-size: .65rem;
+        }
+        &:hover{
+            h3{
+                width: 150%;
+            }
+        }
+    }
+}
+
+
+
+// Smartphone
 @media (max-width: 1080px){
     .filme{
         button{

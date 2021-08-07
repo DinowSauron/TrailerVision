@@ -1,5 +1,9 @@
 
 .mainContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100vw;
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,6 +20,7 @@
 
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
+        mask-image: linear-gradient(90deg, rgba(0,0,0,1) 95%, rgba(0,0,0,0));
         -webkit-mask-image: -webkit-linear-gradient(90deg, rgba(0,0,0,1) 95%, rgba(0,0,0,0));
         
         &::-webkit-scrollbar{
@@ -25,21 +30,75 @@
     }
 }
 
+.separator {
+    display: flex;
+    height: 100vh;
+}
+
+
 .filmContent {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background: radial-gradient(circle at 70% 30%, rgba(62,62,62, .82), var(--background) 80%);
+    background: radial-gradient(circle at 70% 30%, rgba(62,62,62, .88), var(--background) 80%);
     
 }
 
-// .leftBarrier {
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     width: 100px;
-//     height: 60px;
-//     z-index: 6;
-//     background: linear-gradient(-90deg, var(--background) 50%, #0000 100%);
 
-// }
+
+.filmInfo .selected{
+    width: clamp(500px, 100%, 1400px);
+}
+
+.filmInfo {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 100vh;
+    background-color: var(--background);
+    padding-top: 40vh;
+    padding-left: 10px;
+    color: #fff;
+
+    span.posterImg {
+        position: absolute;
+        top: -60px;
+        width: 100%;
+        height: 45vh;
+
+        .leftBarrier {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 45vh;
+            background: linear-gradient(-90deg, rgba(0,0,0,0), var(--background) 95%);
+            z-index: 8;
+        }
+        .downBarrier {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(0,0,0,0), var(--background) 95%);
+            z-index: 8;
+        }
+
+        div img {
+            object-fit: cover;
+        }
+    }
+
+    .movieId{
+        margin-bottom: 0;
+        font-size: .8rem;
+
+        &::before {
+            content: "#";
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+}
