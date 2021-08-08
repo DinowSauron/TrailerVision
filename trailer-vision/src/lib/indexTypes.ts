@@ -38,4 +38,54 @@ export type FilmAreaProps = {
     filme: Filme;
     index: number;
 }
+export type video = {
+    name: string;
+    key: string;
+    site: string;
+}
+
+export type videos = {
+    results: [video]
+}
+
+type credits = {
+    cast: [
+        {
+            id: number;
+            name: string;
+            profile_path: string;
+            character: string;
+        }
+    ]
+}
+
+export type FilmeDetails = {
+    adult: boolean;
+    backdrop_path: string;
+    poster_path: string;
+    title: string;
+    popularity: number;
+    id: number;
+    homepage: string;
+    overview: string;
+    release_date: string;
+    status: string;
+    tagline: string;
+    videos: videos;
+    credits: credits;
+    genres: [
+        {
+            id: number;
+            name: string;
+        }
+    ]
+    production_companies: [
+        {
+            id: number;
+            logo_path: string;
+            name: string;
+        }
+    ]
+}
+
 

@@ -56,11 +56,21 @@ export default function Home(props: HomeProps) {
                 src={photoHalfUrl + selectedMovie.backdrop_path}
               />
             </span>
-            <p className={styles.movieId}>{selectedMovie.id}</p>
-            <h1>{selectedMovie.title}</h1>
-            <ul className={styles.genres}>
-              {/* {selectedMovie.}  usa um hook com o selectedmovie para dar fetch no que faltar*/}
-            </ul>
+            <section className={styles.mainSection}>
+              <p className={styles.movieId}>{selectedMovie.id}</p>
+              <h1>{selectedMovie.title}</h1>
+              <p className={styles.tagline}>{selectedMovie.tagline}</p>
+
+              <h2>Sinopse</h2>
+              <p className={styles.overview}>{selectedMovie.overview}</p>
+
+              <VideoArea videos={selectedMovie.videos}/>
+              
+
+              <ul className={styles.genres}>
+                {/* {selectedMovie.}  usa um hook com o selectedmovie para dar fetch no que faltar*/}
+              </ul>
+            </section>
           </aside>
           
         </div>
@@ -79,7 +89,8 @@ export default function Home(props: HomeProps) {
 
 import { GetStaticProps } from "next";
 import { GetIndexData } from "../lib/getIndexData"
-import { useContext } from 'react';
+import React, { useContext } from 'react';
+import VideoArea from '../components/VideoArea';
 
 export const getStaticProps: GetStaticProps = async () => {
 

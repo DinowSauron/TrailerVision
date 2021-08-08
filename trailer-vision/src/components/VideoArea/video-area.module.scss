@@ -1,0 +1,12 @@
+
+.main {
+    section {
+        width: 100%;
+        overflow-x: scroll;
+
+    }
+    .videos{
+        display: flex;
+        flex-direction: row;
+    }
+}

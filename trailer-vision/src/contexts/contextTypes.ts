@@ -1,10 +1,11 @@
+import { FilmeDetails } from './../lib/indexTypes';
 import { ReactNode } from "react";
 import { Filme } from "../lib/indexTypes";
 
 
 export interface ViewMovieProviderData {
     hasMovieSelected: boolean;
-    selectedMovie: Filme;
+    selectedMovie: FilmeDetails;
     handleSelectedMovie: ({}: SelectedMovieProps) => void;
 }
 

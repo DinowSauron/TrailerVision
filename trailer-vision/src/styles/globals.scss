@@ -56,3 +56,26 @@ a {
 * {
   box-sizing: border-box;
 }
+
+section {
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+  &::-webkit-scrollbar-track {
+      background: #4f4f4f;
+      border: 15px solid transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 100px var(--background);
+      border: 5px solid transparent;
+      border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover{
+      cursor: n-resize
+  }
+  &::-webkit-scrollbar-thumb:hover {
+      box-shadow: inset 0 0 100px #222;
+  }
+}
+

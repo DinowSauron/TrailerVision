@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { Filme } from "../lib/indexTypes";
+import { Filme, FilmeDetails } from "../lib/indexTypes";
 import { SelectedMovieProps, ViewMovieProviderProps } from "./contextTypes";
 import { ViewMovieProviderData } from "./contextTypes";
 
@@ -10,24 +10,35 @@ export const ViewMovieContext = createContext({} as ViewMovieProviderData);
 export function ViewMovieProvider({children} : ViewMovieProviderProps) {
 
     const [hasMovieSelected, setHasMovieSelected] = useState(false);
-    const [selectedMovie, setSelectedMovie] = useState({} as Filme);
+    const [selectedMovie, setSelectedMovie] = useState({} as FilmeDetails);
 
-    function handleSelectedMovie({movie}: SelectedMovieProps) {
+    async function handleSelectedMovie({movie}: SelectedMovieProps) {
+        const selectedId = movie?.id;
+        const actualId = selectedMovie?.id || undefined;
 
-        if (movie === selectedMovie && hasMovieSelected == true && selectedMovie != undefined) {
+        console.log(selectedId);
+
+        if (selectedId === actualId && hasMovieSelected == true && selectedMovie != undefined) {
             setHasMovieSelected(false);
             console.log("desactive1");
             return;
         }
-        if (movie) {
-            if(movie != selectedMovie) {
-                setSelectedMovie(movie);
+        if (selectedId) {
+            if(selectedId != actualId) {
+                setSelectedMovie(await fetch("/api/getMovieDetails", {
+                    method: "POST",
+                    headers: {
+                        MovieId: (selectedId.toString())
+                    }
+                }).then((res) => res.json()));
+                console.log(selectedMovie);
             }
+
             setHasMovieSelected(true);
             console.log("active");
             return;
         }
-        if (!movie) {
+        if (!selectedId) {
             setHasMovieSelected(false);
             console.log("desactive2");
         }
