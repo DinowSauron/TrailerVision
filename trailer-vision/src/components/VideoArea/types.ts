@@ -5,5 +5,6 @@ export type VideoViewProps = {
 }
 
 export type VideoAreaProps = {
-    videos?:  videos
+    videos?:  videos;
+    movieTitle: string;
 }

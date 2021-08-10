@@ -3,12 +3,27 @@
 
 .main{
     width: fit-content;
-    list-style: none;
 
     iframe {
+        position: relative;
         font-size: .8rem;
         border-radius: 10px;
         margin-right: 20px;
+        z-index: 5;
+    }
+    Image {
+        width: 320px;
+        height: 150px;
+        position: relative;
+        font-size: .8rem;
+        border-radius: 10px;
+        margin-right: 20px;
+        z-index: 5;
+    }
+    
+    button {
+        position: relative;
+        z-index: 15;
     }
 }
 

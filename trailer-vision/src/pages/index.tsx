@@ -64,7 +64,7 @@ export default function Home(props: HomeProps) {
               <h2>Sinopse</h2>
               <p className={styles.overview}>{selectedMovie.overview}</p>
 
-              <VideoArea videos={selectedMovie.videos}/>
+              <VideoArea videos={selectedMovie.videos} movieTitle={selectedMovie.title}/>
               
 
               <ul className={styles.genres}>
