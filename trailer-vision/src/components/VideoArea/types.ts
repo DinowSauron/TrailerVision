@@ -8,3 +8,8 @@ export type VideoAreaProps = {
     videos?:  videos;
     movieTitle: string;
 }
+
+export type VideoModalProps = {
+    video: video;
+    closeFunction: (state:boolean) => void;
+}

@@ -2,28 +2,70 @@
 
 
 .main{
+    position: relative;
     width: fit-content;
+    min-width: 260px;
 
-    iframe {
-        position: relative;
-        font-size: .8rem;
-        border-radius: 10px;
-        margin-right: 20px;
-        z-index: 5;
+    margin-right: 20px;
+
+    .container {
+        cursor: pointer;
     }
-    Image {
-        width: 320px;
-        height: 150px;
+
+    h4 {
+        position: absolute;
+        width: fit-content;
+        padding: 0 5px;
+        max-width: 99%;
+        margin: 5px;
+
+        border-radius: 5px;
+        text-shadow: 2px 2px 2px #000;
+        background-color: #0009;
+        z-index: 6;
+        
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .bannerImg {
         position: relative;
-        font-size: .8rem;
-        border-radius: 10px;
-        margin-right: 20px;
-        z-index: 5;
+
+        div, img {
+            width: 266px;
+            height: 150px;
+            border-radius: 10px;
+            z-index: 5;
+            object-fit: cover;
+        }
+
+    }
+
+    svg {
+        position: absolute;
+        top: calc(50% - 21px);
+        left: calc(52% - 30px);
+        height: 42px;
+        width: fit-content;
+        filter: grayscale(1);
+        transition: filter .1s;
+        z-index: 6;
     }
     
+    &:hover, .selected{
+        svg {
+            filter: grayscale(0);
+        }
+    }
+
+
     button {
         position: relative;
         z-index: 15;
     }
+
+
+    
 }
 

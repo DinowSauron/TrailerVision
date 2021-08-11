@@ -1,0 +1,79 @@
+
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(79, 79, 79, 0.631);
+
+    z-index: 20;
+    .videoWapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        z-index: 5;
+
+        h2 {
+            width: clamp(50vw, 120vh, 90vw);
+            text-shadow: 2px 2px 5px #000;
+            margin-top: 0;
+        }
+
+        iframe {
+            width: clamp(50vw, 120vh, 90vw);
+            background-color: #000;
+            height: 70vh;
+
+            box-shadow: 5px 5px 20px #000;
+        }
+
+    }
+
+    .closeModal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        margin: 20px;
+
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+
+        z-index: 6;
+
+        &:before, &:after{
+            position: absolute;
+            content: "";
+            top: 45%;
+            left: -10%;
+            width: 120%;
+            height: 10%;
+            border-radius: 15px;
+            border: 1px solid #000;
+            transition: background-color .2s;
+            background: #fff;
+        }
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+        &:hover:before,
+        &:hover:after {
+            background: var(--background);
+        }
+    }
+
+}

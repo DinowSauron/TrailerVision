@@ -1,27 +1,42 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { VideoViewProps } from "../types";
 import styles from "./video-view.module.scss";
 import Image from "next/dist/client/image";
+import YoutubeIcon from "../YoutubeIcon";
+import VideoModal from "../VideoModal";
 
 
 export default function VideoView({video}: VideoViewProps){
 
     const [isPlaying, setIsPlaying] = useState(false);
 
+    function handleSetIsPlaying(state: boolean){
+        setIsPlaying(state);
+    }
+
     return(
         <li className={styles.main}>
-                
-            {/* <iframe 
-                src={`https://www.youtube.com/embed/${video.key}`} 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
+
+            <div
+                className={styles.container}
+                onClick={() => handleSetIsPlaying(true)}
             >
-                <a href={`https://www.youtube.com/embed/${video.key}`}>See On Youtube</a>
-            </iframe> */}
-            <Image width="320" height="150" src={`https://i.ytimg.com/vi/${video.key}/hq720.jpg`} alt="" />
-                
+                <h4>{video.name}</h4>
+                <span className={styles.bannerImg + " img"}>
+                    <Image 
+                        layout="fill" 
+                        src={`https://i.ytimg.com/vi/${video.key}/hqdefault.jpg`} 
+                        alt={`Video no YouTube | ${video.name}`}
+                    />
+                    
+                </span>
+                <YoutubeIcon/>
+            </div>
+            
+            {isPlaying ? (
+            <VideoModal video={video} closeFunction={handleSetIsPlaying}/>
+            ) : (<></>)}
+            
         </li>
     )
 
