@@ -4,11 +4,6 @@
 
 
 
-## Notas pessoais:
-
-* Next somente aceita imagens pelo ``<Image/>``, do propio next, acesse ele pelo css via ``div img {}`` para colocar opções como object-fit, etc...
-
-* Adicionar os servidores de fetch(para imagens) no next.config.js
 
 ## Tecnologias Utilizadas:
 
@@ -16,7 +11,22 @@
 * Sass
 * ReactJS
 * Typescript
-* 
+* API Rest
+
+## Seviços Utilizados:
+
+* [The Movie Database](https://www.themoviedb.org/)
+* [Just Watch](https://www.justwatch.com/)
+* [YouTube](https://www.youtube.com/)
+
+
+## Notas pessoais:
+
+* Next somente aceita imagens pelo ``<Image/>``, do propio next, acesse ele pelo css via ``div img {}`` para colocar opções como object-fit, etc...
+
+* Adicionar os servidores de fetch(para imagens) no next.config.js
+
+
 
 ## Comandos Utilizados:
 * ``yarn create next-app trailer-vision --typescript``

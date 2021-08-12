@@ -1,0 +1,165 @@
+
+.selected{
+    width: clamp(500px, 100%, 1100px) !important;
+    min-width: clamp(500px, 50%, 1100px);
+    // max-width: 800px;
+}
+
+.filmInfo {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 100vh;
+    background-color: var(--background);
+    padding-top: 40vh;
+    padding-left: 10px;
+    padding-bottom: 80px;
+    
+    transition: width 2s;
+    color: #fff;
+
+    section.mainSection {
+        height: 100%;
+        overflow-y: scroll;
+        padding-right: 15px;
+        padding-bottom: 20px;
+
+    }
+
+
+    span.posterImg {
+        position: absolute;
+        top: -60px;
+        left: 0;
+        width: 100%;
+        height: 45vh;
+
+        .leftBarrier {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 45vh;
+            background: linear-gradient(-90deg, rgba(0,0,0,0), var(--background) 95%);
+            z-index: 8;
+        }
+        .downBarrier {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(0,0,0,0), var(--background) 95%);
+            z-index: 8;
+        }
+
+        div img {
+            object-fit: cover;
+        }
+    }
+
+    .vote {
+        position: absolute;
+        left: calc(100% - 70px);
+        top: 30vh;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #fff;
+        border-radius: 40px;
+        cursor: default;
+
+
+        background-color: #00ee00;
+        text-align: center;
+        align-items: center;
+        line-height: 38px;
+
+
+        z-index: 8;
+    }
+
+    .movieId{
+        margin-bottom: 0;
+        font-size: .8rem;
+
+        .dot {
+            display: inline-block;
+            width: 4px;
+            min-height: 4px;
+            border-radius: 5px;
+            margin: .2rem;
+            background-color: #fff;
+        }
+    }
+
+    
+    h1 {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-shadow: 2px 2px 5px #000;
+    }
+
+    h2 {
+        font-weight: 400;
+        letter-spacing: 3px;
+        margin-bottom: 5px;
+
+
+        &:after {
+            content: ":"
+        }
+    }
+
+    .tagline {
+        font-size: .8rem;
+        margin-top: 0;
+    }
+
+    .overview {
+        margin-top: 0;
+        text-indent: 30px;
+        margin-bottom: 35px;
+
+        font-weight: 200;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    hr {
+        margin-top: 2px;
+    }
+
+    
+    .genres {
+        position: relative;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            list-style: none;
+            padding-right: 80px;
+        }
+
+        li{
+            margin: 5px;
+            font-size: .75rem;
+            margin-left: 0;
+            margin-bottom: 0;
+
+            &:not(:last-child) {
+                &:after{
+                    content: ",";
+                }
+            }
+        }
+
+        p {
+            font-size: .75rem;
+            position: absolute;
+            margin: 0;
+            right: 0;
+            bottom: -20px;
+        }
+    }
+}

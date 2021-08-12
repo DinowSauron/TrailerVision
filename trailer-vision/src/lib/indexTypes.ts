@@ -59,6 +59,19 @@ type credits = {
     ]
 }
 
+
+export type providerInfo = {
+    logo_path: string;
+    provider_id: number;
+    provider_name: string;}
+
+export type movieProvider = {
+    link: string;
+    flatrate: [providerInfo];
+    buy: [providerInfo];
+    rent: [providerInfo];
+}
+
 export type FilmeDetails = {
     adult: boolean;
     backdrop_path: string;
@@ -73,6 +86,9 @@ export type FilmeDetails = {
     tagline: string;
     videos: videos;
     credits: credits;
+    runtime: number;
+    vote_average: number;
+    providers: movieProvider;
     genres: [
         {
             id: number;

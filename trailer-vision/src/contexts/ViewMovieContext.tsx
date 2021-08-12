@@ -31,9 +31,8 @@ export function ViewMovieProvider({children} : ViewMovieProviderProps) {
                         MovieId: (selectedId.toString())
                     }
                 }).then((res) => res.json()));
-                console.log(selectedMovie);
             }
-
+            
             setHasMovieSelected(true);
             console.log("active");
             return;

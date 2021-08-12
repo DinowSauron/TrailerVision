@@ -9,13 +9,15 @@ import VideoModal from "../VideoModal";
 export default function VideoView({video}: VideoViewProps){
 
     const [isPlaying, setIsPlaying] = useState(false);
+    // console.log(video)
+
 
     function handleSetIsPlaying(state: boolean){
         setIsPlaying(state);
     }
 
     return(
-        <li className={styles.main}>
+        <li className={styles.main} key={video.key}>
 
             <div
                 className={styles.container}

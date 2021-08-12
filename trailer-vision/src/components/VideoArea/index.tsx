@@ -18,7 +18,7 @@ export default function VideoArea({videos, movieTitle}: VideoAreaProps) {
                         return <VideoView video={video}/>
                         })}
 
-                        <li className={styles.lastItem}>
+                        <li className={styles.lastItem} key="last">
                             <a href={`https://www.youtube.com/results?search_query=${movieTitle}%20Trailer`} target="_blank">
                                 <YoutubeIcon/>
                                 <p>Pesquisar No YouTube</p>

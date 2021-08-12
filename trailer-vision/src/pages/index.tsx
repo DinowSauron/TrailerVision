@@ -4,16 +4,19 @@ import styles from '../styles/index.module.scss';
 import { Filmes, HomeProps } from "../lib/indexTypes" 
 import { ViewMovieContext } from "../contexts/ViewMovieContext"
 
+import AsideDetails from '../components/AsideFilmDetails';
 import HeaderMenu from "../components/HeaderMenu";
 import FooterInfo from "../components/FooterInfo";
 import FilmArea from "../components/FilmArea";
+import ProviderArea from "../components/AsideFilmDetails/ProviderArea";
+import VideoArea from '../components/VideoArea';
 
 
 export default function Home(props: HomeProps) {
   const photoOriginalUrl = "https://image.tmdb.org/t/p/original";
-  const photoHalfUrl = "https://image.tmdb.org/t/p/w500";
 
-  const {hasMovieSelected, selectedMovie} = useContext(ViewMovieContext);
+
+
 
   return (
     <div 
@@ -46,32 +49,8 @@ export default function Home(props: HomeProps) {
             <FilmArea genre="Filmes de Faroeste" filmData={props.movies.genWestern}/>
             <FilmArea genre="Fantasia" filmData={props.movies.genFantasy}/>
           </section>
-          <aside className={styles.filmInfo + " " + (hasMovieSelected ? styles.selected : "")}>
-            <span className={styles.posterImg + " img"}>
-              <span className={styles.leftBarrier}></span>
-              <span className={styles.downBarrier}></span>
-              <Image
-                priority={true}
-                layout="fill"
-                src={photoHalfUrl + selectedMovie.backdrop_path}
-              />
-            </span>
-            <section className={styles.mainSection}>
-              <p className={styles.movieId}>{selectedMovie.id}</p>
-              <h1>{selectedMovie.title}</h1>
-              <p className={styles.tagline}>{selectedMovie.tagline}</p>
 
-              <h2>Sinopse</h2>
-              <p className={styles.overview}>{selectedMovie.overview}</p>
-
-              <VideoArea videos={selectedMovie.videos} movieTitle={selectedMovie.title}/>
-              
-
-              <ul className={styles.genres}>
-                {/* {selectedMovie.}  usa um hook com o selectedmovie para dar fetch no que faltar*/}
-              </ul>
-            </section>
-          </aside>
+          <AsideDetails/>
           
         </div>
         {/* <FilmArea genre="Ficção Cientifica"/>
@@ -90,7 +69,6 @@ export default function Home(props: HomeProps) {
 import { GetStaticProps } from "next";
 import { GetIndexData } from "../lib/getIndexData"
 import React, { useContext } from 'react';
-import VideoArea from '../components/VideoArea';
 
 export const getStaticProps: GetStaticProps = async () => {
 
