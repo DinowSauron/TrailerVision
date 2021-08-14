@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ViewMovieContext } from "../../contexts/ViewMovieContext";
 import ProviderArea from "./ProviderArea";
 import VideoArea from "../VideoArea";
@@ -12,8 +12,18 @@ import Recomendations from "./Recomendations";
 export default function AsideDetails() {
     const {hasMovieSelected, selectedMovie} = useContext(ViewMovieContext);
     const photoHalfUrl = "https://image.tmdb.org/t/p/original";
-
     
+    const releaseDate = getReleasedDate();
+
+    function getReleasedDate() {
+      if(!selectedMovie.release_date){
+        return "";
+      }
+      const dateSplit = selectedMovie.release_date.split("-");
+      const date = dateSplit.reverse().join('/');
+      return date;
+    }
+
     function getMovieTimeString(time: number){
         const hours = Math.floor(time / 60);
         const minutes = time - 60 * hours
@@ -42,8 +52,16 @@ export default function AsideDetails() {
         }
     }
 
+    
+    useEffect(() => {
+      const sections = document.getElementById("asideArea")?.getElementsByTagName("section") || [];
+      for(var i = 0; i < sections.length; i++) {
+        sections[i].scroll({top: 0 , left: 0, behavior: 'smooth'});
+      }
+    }, [selectedMovie]);
+
     return (
-        <aside className={styles.filmInfo + " " + (hasMovieSelected ? styles.selected : "")}>
+        <aside className={styles.filmInfo + " " + (hasMovieSelected ? styles.selected : "")} id="asideArea">
             <span className={styles.posterImg + " img"}>
               <span className={styles.leftBarrier}></span>
               <span className={styles.downBarrier}></span>
@@ -92,7 +110,12 @@ export default function AsideDetails() {
                         return <li key={genre.id}>{genre.name}</li>
                       })}
                   </div>
-                  <p>{selectedMovie.status}</p>
+                  <p
+                    title={selectedMovie.release_date}
+                  >
+                  {selectedMovie.status} 
+                  <span className={styles.dot}></span>
+                  {releaseDate}</p>
                 </ul>
                 
 

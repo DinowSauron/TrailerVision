@@ -17,7 +17,7 @@ export default function VideoView({video}: VideoViewProps){
     }
 
     return(
-        <li className={styles.main} key={video.key}>
+        <li className={styles.main}>
 
             <div
                 className={styles.container}

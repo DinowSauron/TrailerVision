@@ -15,12 +15,14 @@ export function ViewMovieProvider({children} : ViewMovieProviderProps) {
     async function handleSelectedMovie({movie}: SelectedMovieProps) {
         const selectedId = movie?.id;
         const actualId = selectedMovie?.id || undefined;
+        setHtmlCursor("wait");
 
         console.log(selectedId);
 
         if (selectedId === actualId && hasMovieSelected == true && selectedMovie != undefined) {
             setHasMovieSelected(false);
             console.log("desactive1");
+            setHtmlCursor("default")
             return;
         }
         if (selectedId) {
@@ -35,14 +37,19 @@ export function ViewMovieProvider({children} : ViewMovieProviderProps) {
             
             setHasMovieSelected(true);
             console.log("active");
+            setHtmlCursor("default")
             return;
         }
         if (!selectedId) {
             setHasMovieSelected(false);
             console.log("desactive2");
+            setHtmlCursor("default")
         }
     }
 
+    function setHtmlCursor(type: "default" | "wait") {
+        document.body.style.cursor = type;
+    }
     
     return (
         <ViewMovieContext.Provider value={{

@@ -24,7 +24,7 @@ export default async function handleGetMovieDetais(req: NextApiRequest, res: Nex
     
 
     const data = {...movieData, providers: providerData}
-    console.log(data)
+    // console.log(data)
 
     res.json(data);
     

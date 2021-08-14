@@ -10,16 +10,17 @@ export default function Recomendations({recommendations}: RecomendationsProps) {
 
     return (
         <div className={styles.main}>
-            {/* <FilmArea genre="Filmes Relacionados:" filmData={recommendations}/> */}
+            {recommendations.total_results > 0 ? (<>
             <h3>Filmes Relacionados:</h3>
             <section>
                 <ul>
                     {recommendations.results.map((movie, index) => {
                         
-                        return <Film filme={movie} index={index}/>
+                        return <Film filme={movie} index={index} key={movie.id}/>
                     })}
                 </ul>
             </section>
+            </>) : (<></>) }
         </div>
     )
 }

@@ -15,7 +15,7 @@ export default function VideoArea({videos, movieTitle}: VideoAreaProps) {
                     <section>
                     <ul className={styles.videos}>
                         {videos?.results.map((video) => {
-                        return <VideoView video={video}/>
+                        return <VideoView video={video} key={video.key}/>
                         })}
 
                         <li className={styles.lastItem} key="last">

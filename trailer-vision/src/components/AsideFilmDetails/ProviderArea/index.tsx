@@ -27,9 +27,6 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
         return (<></>);
     }
 
-    useEffect(() => {
-        resetProviders(actualTypeId);
-    }, [selectedMovie])
 
     
     const [viewProviders, setViewProviders] = useState<[providerInfo]>(allProviders);
@@ -63,6 +60,10 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
             return;
         }
     }
+    
+    useEffect(() => {
+        resetProviders(actualTypeId);
+    }, [selectedMovie])
 
     return ( 
     <div className={styles.container}>
