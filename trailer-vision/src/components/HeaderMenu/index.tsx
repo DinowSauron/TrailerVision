@@ -6,6 +6,7 @@ export default function HeaderMenu(){
 
     return(
         <div className={styles.main}>
+            <div className={styles.headerBar}>
             <button>
                 <div/>
             </button>
@@ -27,6 +28,9 @@ export default function HeaderMenu(){
                     />
                 </span>
             </a>
+            </div>
+            
+
         </div>
     )
 }

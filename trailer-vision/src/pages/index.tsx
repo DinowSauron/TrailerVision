@@ -48,6 +48,7 @@ export default function Home(props: HomeProps) {
             <FilmArea genre="Para a família" filmData={props.movies.genFamily}/>
             <FilmArea genre="Filmes de Faroeste" filmData={props.movies.genWestern}/>
             <FilmArea genre="Fantasia" filmData={props.movies.genFantasy}/>
+            
           </section>
 
           <AsideDetails/>

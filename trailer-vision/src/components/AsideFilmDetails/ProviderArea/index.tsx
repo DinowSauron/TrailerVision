@@ -3,12 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { ViewMovieContext } from "../../../contexts/ViewMovieContext";
 import { movieProvider, providerInfo } from "../../../lib/indexTypes";
 import styles from "./provider-area.module.scss"
-import { ProviderAreaProps } from "./types";
+import { ProviderAreaProps } from "../types";
 
 
 export default function ProviderArea({providers}: ProviderAreaProps) {
     const photoHalfUrl = "https://image.tmdb.org/t/p/w200";
-    const {selectedMovie} = useContext(ViewMovieContext)
+    const {selectedMovie} = useContext(ViewMovieContext);
 
 
     var insertedProviders: [string] = [""];
@@ -22,7 +22,10 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
     if(providers.rent) {
         providersList.push(...providers.rent);
     }
-    const allProviders: [providerInfo] = providersList as [providerInfo]
+    const allProviders: [providerInfo] = providersList as [providerInfo];
+    if(allProviders.length <2){
+        return (<></>);
+    }
 
     useEffect(() => {
         resetProviders(actualTypeId);
@@ -94,7 +97,10 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
                 }
 
                 return (
-                <li tabIndex={insertedProviders.length + 50} key={insertedProviders.length}>
+                <li 
+                    tabIndex={insertedProviders.length + 50} 
+                    key={insertedProviders.length}
+                    title={provider.provider_name}>
                     <span className={styles.providerImg + " img"}>
                         <Image
                             layout="fill"

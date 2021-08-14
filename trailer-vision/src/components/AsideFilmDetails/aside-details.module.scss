@@ -18,6 +18,9 @@
     transition: width 2s;
     color: #fff;
 
+
+    
+
     section.mainSection {
         height: 100%;
         overflow-y: scroll;
@@ -163,3 +166,16 @@
         }
     }
 }
+
+
+.pass {
+    position: absolute;
+    left: -10px;
+    top: -60px;
+    z-index: 880;
+
+    width: 10px;
+    height: 100px;
+    background: linear-gradient(-90deg, var(--background) 50%, #0000 100%);
+}
+

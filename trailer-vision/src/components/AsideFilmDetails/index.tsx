@@ -5,22 +5,27 @@ import { ViewMovieContext } from "../../contexts/ViewMovieContext";
 import ProviderArea from "./ProviderArea";
 import VideoArea from "../VideoArea";
 import styles from "./aside-details.module.scss";
+import CastArea from "./CastArea";
+import Recomendations from "./Recomendations";
 
 
 export default function AsideDetails() {
     const {hasMovieSelected, selectedMovie} = useContext(ViewMovieContext);
-    const photoHalfUrl = "https://image.tmdb.org/t/p/w500";
+    const photoHalfUrl = "https://image.tmdb.org/t/p/original";
 
     
     function getMovieTimeString(time: number){
         const hours = Math.floor(time / 60);
         const minutes = time - 60 * hours
+        if(minutes === 0) {
+            return `${hours}h`
+        }
 
         return `${hours}h ${minutes}min`
     }
 
     function getBackgroundVoteColor(vote: number) {
-        if(vote > 9) {
+        if(vote > 8.5) {
         return "#00ee00"
         } 
         else if(vote > 7) {
@@ -49,8 +54,9 @@ export default function AsideDetails() {
               />
             </span>
             
+            <div className={styles.pass}/>
             
-            {console.log(selectedMovie)}
+            
             {hasMovieSelected ? (
               <section className={styles.mainSection}>
 
@@ -94,13 +100,17 @@ export default function AsideDetails() {
 
                 <VideoArea videos={selectedMovie.videos} movieTitle={selectedMovie.title}/>
                 
-                {console.log(selectedMovie)}
                 {(selectedMovie.providers) ?  (
                     <ProviderArea providers={selectedMovie.providers}/>
                 ) : (<></>)}
+                <br/>
+                
+                <CastArea credits={selectedMovie.credits}/>
+
+                <Recomendations recommendations={selectedMovie.recommendations}/>
                 {/*  */}
 
-                  
+                
                 
               </section>
             ) : (<></>)}

@@ -1,0 +1,71 @@
+
+
+
+.castContainer {
+
+    position: relative;
+
+    h3 {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-right: 10px;
+        width: 130px;
+        height: 230px;
+
+
+        .castImg {
+            padding-top: 180px;
+            position: relative;
+            width: 120px;
+            height: 230px;
+            background: var(--gradientLinear);
+            border-radius: 8px;
+            div{
+                border-radius: 8px;
+                transform: scale(.98);
+                height: 180px;
+                background-color: var(--background);
+            }
+        }
+
+        h4 {
+            color: #000;
+
+        }
+        h5 {
+            font-weight: 200;
+        }
+        h4, h5 {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin: 2px;
+            font-size: .9rem;
+            padding-right: 1px;
+            color: #000;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+
+    
+    section {
+        width: 100%;
+        overflow-x: scroll;
+
+    }
+}

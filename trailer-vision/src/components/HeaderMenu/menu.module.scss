@@ -3,17 +3,24 @@
 
 .main{
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: left;
 
-    width: fit-content;
-    height: 60px;
-    z-index: 15;
-    // max-width: 30vw;
+    .headerBar {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: left;
     
-    background: var(--gradientLinear);
-    border-bottom-right-radius: 40px;
+        width: fit-content;
+        height: 60px;
+        z-index: 15;
+        // max-width: 30vw;
+        
+        background: var(--gradientLinear);
+        border-bottom-right-radius: 40px;
+
+    }
+
+
 
     .mainLogo{
         position: relative;
@@ -88,4 +95,5 @@
         }
     }
 }
+
 

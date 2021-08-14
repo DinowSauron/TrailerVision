@@ -14,7 +14,7 @@ export default async function handleGetMovieDetais(req: NextApiRequest, res: Nex
 
     const apiKey = process.env.API_KEY;
     const movieId = req.headers.movieid;
-    const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=pt-BR&append_to_response=videos,credits,certification`;
+    const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=pt-BR&append_to_response=videos,credits,certification,recommendations`;
     const providerURL = `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}&language=pt-BR`;
     
     console.log("Data Detalhada Requisitada")
@@ -24,7 +24,7 @@ export default async function handleGetMovieDetais(req: NextApiRequest, res: Nex
     
 
     const data = {...movieData, providers: providerData}
-    // console.log(data)
+    console.log(data)
 
     res.json(data);
     
