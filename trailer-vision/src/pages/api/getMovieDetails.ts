@@ -2,6 +2,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { movieProvider } from "../../lib/indexTypes";
+
 export default async function handleGetMovieDetais(req: NextApiRequest, res: NextApiResponse){
 
     if(req.method != "POST"){

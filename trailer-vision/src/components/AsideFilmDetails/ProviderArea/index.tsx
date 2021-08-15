@@ -46,14 +46,15 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
                 setViewProviders([...providers.flatrate]);
                 setActualTypeId(providerTypeId);
             }
-            if(providerTypeId === 1) {
+            else if(providerTypeId === 1) {
                 setViewProviders([...providers.buy]);
                 setActualTypeId(providerTypeId);
             }
-            if(providerTypeId === 2) {
+            else if(providerTypeId === 2) {
                 setViewProviders([...providers.rent]);
                 setActualTypeId(providerTypeId);
             }
+            return;
         } catch {
             setViewProviders([...allProviders]); //reset
             setActualTypeId(-1);
@@ -93,14 +94,14 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
         <ul className={styles.main}>
             {viewProviders.map((provider) => {
                 if(insertedProviders.indexOf(provider.provider_name) >= 0) {
-                    // to prevent same provider
+                    // to prevent same provider 
                     return (<></>);
                 }
 
                 return (
                 <li 
                     tabIndex={insertedProviders.length + 50} 
-                    key={insertedProviders.length}
+                    key={provider.provider_id.toString()}
                     title={provider.provider_name}>
                     <span className={styles.providerImg + " img"}>
                         <Image

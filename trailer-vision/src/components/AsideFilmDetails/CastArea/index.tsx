@@ -26,7 +26,7 @@ export default function CastArea(props: CastAreaProps){
                         return (
                         cast ? (
                         <li 
-                            key={cast.cast_id}
+                            key={cast.cast_id.toString()}
                             title={`${cast.name}  |  ${cast.character}`}
                         >
                             <span className={styles.castImg + " img"}>

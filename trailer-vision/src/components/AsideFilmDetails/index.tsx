@@ -58,6 +58,11 @@ export default function AsideDetails() {
       for(var i = 0; i < sections.length; i++) {
         sections[i].scroll({top: 0 , left: 0, behavior: 'smooth'});
       }
+      const widthRatio = document.getElementById('MainContent')?.getBoundingClientRect().width || 0;
+      if (widthRatio < 1080) {
+        document.getElementById("MainContent")?.scroll({top: 0, behavior: "smooth"});
+      }
+
     }, [selectedMovie]);
 
     return (
@@ -104,19 +109,19 @@ export default function AsideDetails() {
 
 
 
-                <ul className={styles.genres}>
-                  <div>
+                <div className={styles.genres}>
+                  <ul>
                       {selectedMovie.genres.map((genre) => {
                         return <li key={genre.id}>{genre.name}</li>
                       })}
-                  </div>
+                  </ul>
                   <p
                     title={selectedMovie.release_date}
                   >
                   {selectedMovie.status} 
                   <span className={styles.dot}></span>
                   {releaseDate}</p>
-                </ul>
+                </div>
                 
 
                 <hr />

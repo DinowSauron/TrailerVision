@@ -46,3 +46,22 @@
     
 }
 
+
+//celular
+@media (max-width: 1080px){ 
+    .mainContent .filmContent {
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        
+        .moviesArea {
+            min-height: 100%;
+            mask-image: none;
+            -webkit-mask-image: none;
+        }
+        .separator {
+            height: fit-content !important;
+            flex-direction: column-reverse;
+        }
+    }
+}
