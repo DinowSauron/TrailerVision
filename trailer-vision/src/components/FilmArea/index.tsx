@@ -3,7 +3,7 @@ import { Filme } from "../../lib/indexTypes"
 import Image from 'next/image'
 import Film from "./Film"
 import { FilmAreaProps } from "./types"
-import { useContext, useState } from "react"
+import { SyntheticEvent, useContext, useState } from "react"
 import { ViewMovieContext } from "../../contexts/ViewMovieContext"
 
 export default function FilmArea(props: FilmAreaProps){
@@ -31,13 +31,14 @@ export default function FilmArea(props: FilmAreaProps){
     }
   }
 
-  function verifyScroll(){
-    const actualScrollPosition = document.getElementById(sectionId)?.scrollLeft || 0;
+  function verifyScroll(e: SyntheticEvent){
+    const actualScrollPosition = e.currentTarget.scrollLeft || 0;
     if(actualScrollPosition > 4) {
       (needScroll == false) && setNeedScroll(true);
     }else{
       (needScroll == true) && setNeedScroll(false);
     }
+
   }
 
 
@@ -49,7 +50,7 @@ export default function FilmArea(props: FilmAreaProps){
 
       <section 
         id={props.genre}
-        onScroll={() => verifyScroll()}
+        onScroll={(e) => verifyScroll(e)}
       >
         <ul className={styles.filmes}>
           

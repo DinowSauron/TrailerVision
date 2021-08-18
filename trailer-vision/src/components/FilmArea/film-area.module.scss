@@ -1,6 +1,7 @@
 
 .main{
     position: relative;
+    display: block;
     margin-top: 40px;
     margin-bottom: -45px;
 
@@ -63,10 +64,10 @@
         top: 0;
         left: 0;
         background: linear-gradient(90deg, var(--background) 50%, #0000 100%);
-        transition: all 1s;
+        // transition: all 1s;
 
         span{
-            top: 48%;
+            top: calc(50% - 15px);
             margin-left: 5px;
             transform: rotate(180deg);
             
@@ -78,13 +79,13 @@
     div.rightPass {
         top: -15%;
         height: 120%;
-        right: 0;
+        right: -1px;
         background: linear-gradient(-90deg, var(--background) 50%, #0000 100%);
 
 
         
         span{
-            top: 53%;
+            top: calc(50% - 15px);
             left: 52%;
             &:hover{
                 transform: scale(1.1);

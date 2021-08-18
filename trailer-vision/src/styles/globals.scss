@@ -57,7 +57,7 @@ a {
   box-sizing: border-box;
 }
 
-section {
+section, main {
 
   &::-webkit-scrollbar {
     width: 16px;

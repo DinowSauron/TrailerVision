@@ -21,7 +21,7 @@ export default function CastArea(props: CastAreaProps){
                 <ul>
                     {casts.map((cast, index) => {
                         if(index > 28) {
-                            return (<></>);
+                            return <></>;
                         }
                         return (
                         cast ? (
