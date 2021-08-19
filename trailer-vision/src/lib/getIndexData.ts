@@ -1,3 +1,4 @@
+import { Filmes, HomeProps } from './indexTypes';
 
 
 function generateDate(data?: Date) {
@@ -37,6 +38,11 @@ function getGenreURL(genre: number){
 }
 
 
+
+export async function getImportantPaths() {
+    return await fetch(getPopularURL()).then((res) => res.json()) as Filmes;
+}
+
 // Main Function
 export async function GetIndexData() {
     const dateToday = generateDate();
@@ -46,7 +52,7 @@ export async function GetIndexData() {
     const data = {
         releases: await fetch(getDiscoverURL(dateToday, dateNextMonths)).then((res) => res.json()),
         newMovies: await fetch(getDiscoverURL(datePrevMonths, dateToday)).then((res) => res.json()),
-        mostPopular: await fetch(getPopularURL()).then((res) => res.json()),
+        mostPopular: getImportantPaths(),
         genSciFi: await fetch(getGenreURL(878)).then((res) => res.json()),
         genAction: await fetch(getGenreURL(28)).then((res) => res.json()),
         genWar: await fetch(getGenreURL(10752)).then((res) => res.json()),
