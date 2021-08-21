@@ -25,7 +25,7 @@ export default function Home(props: HomeProps) {
     >
 
       <Head>
-          <title> Home | Trailer Vision</title>
+          <title>Trailer Vision | Home</title>
       </Head>
 
       <main className={styles.filmContent} id="MainContent">

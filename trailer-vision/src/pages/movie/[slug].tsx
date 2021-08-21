@@ -1,15 +1,33 @@
 
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
+import React from "react";
+import HeaderMenu from "../../components/HeaderMenu";
 import { getImportantPaths } from "../../lib/getIndexData"
 import { MovieProps, Params } from "../../lib/movieTypes";
+import style from "../../styles/movie.module.scss" 
 
 // 497698
 
 export default function Movie({movie}: MovieProps){
+    const photoOriginalUrl = "https://image.tmdb.org/t/p/original";
 
 
     return (
-        <h1>{movie.title}</h1>
+        <div 
+            className={style.mainContent}
+            style={{backgroundImage: 'url(' + photoOriginalUrl + movie.backdrop_path + ')'}}
+        >
+
+            <Head>
+                <title>Trailer Vision | {movie.title}</title>
+            </Head>
+            <div className={style.mainContainer}>
+                
+                <HeaderMenu/>
+                <h1>{movie.title}</h1>
+            </div>
+        </div>
     )
 }
 

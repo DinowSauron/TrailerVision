@@ -52,7 +52,7 @@ export async function GetIndexData() {
     const data = {
         releases: await fetch(getDiscoverURL(dateToday, dateNextMonths)).then((res) => res.json()),
         newMovies: await fetch(getDiscoverURL(datePrevMonths, dateToday)).then((res) => res.json()),
-        mostPopular: getImportantPaths(),
+        mostPopular: await getImportantPaths(),
         genSciFi: await fetch(getGenreURL(878)).then((res) => res.json()),
         genAction: await fetch(getGenreURL(28)).then((res) => res.json()),
         genWar: await fetch(getGenreURL(10752)).then((res) => res.json()),
