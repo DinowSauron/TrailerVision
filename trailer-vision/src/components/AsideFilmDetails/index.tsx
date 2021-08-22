@@ -11,7 +11,7 @@ import Recomendations from "./Recomendations";
 
 export default function AsideDetails() {
     const {hasMovieSelected, selectedMovie} = useContext(ViewMovieContext);
-    const photoHalfUrl = "https://image.tmdb.org/t/p/original";
+    const photoOriginalUrl = "https://image.tmdb.org/t/p/original";
     
     const releaseDate = getReleasedDate();
 
@@ -73,7 +73,7 @@ export default function AsideDetails() {
               <Image
                 priority={true}
                 layout="fill"
-                src={photoHalfUrl + selectedMovie.backdrop_path}
+                src={photoOriginalUrl + selectedMovie.backdrop_path}
               />
             </span>
             

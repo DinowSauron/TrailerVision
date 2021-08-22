@@ -24,9 +24,7 @@ export default function Home(props: HomeProps) {
     style={{backgroundImage: 'url(' + photoOriginalUrl + props.movies.newMovies.results[0].backdrop_path + ')'}}
     >
 
-      <Head>
-          <title>Trailer Vision | Home</title>
-      </Head>
+      <Seo siteTitle="Trailer Vision | Home"/>
 
       <main className={styles.filmContent} id="MainContent">
         <header>
@@ -70,6 +68,7 @@ export default function Home(props: HomeProps) {
 import { GetStaticProps } from "next";
 import { GetIndexData } from "../lib/getIndexData"
 import React, { useContext } from 'react';
+import { Seo } from '../components/Seo/Seo';
 
 export const getStaticProps: GetStaticProps = async () => {
 
@@ -80,7 +79,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: data,
 
-    revalidate: 10
+    revalidate: 3600 * 24
   }
 
 }

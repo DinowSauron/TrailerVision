@@ -1,7 +1,6 @@
 
 
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { movieProvider } from "../../lib/indexTypes";
 
 export default async function handleGetMovieDetais(req: NextApiRequest, res: NextApiResponse){
 
@@ -21,11 +20,14 @@ export default async function handleGetMovieDetais(req: NextApiRequest, res: Nex
     console.log("Data Detalhada Requisitada")
 
     const movieData = await fetch(movieURL).then((res) => res.json());
-    const providerData = await fetch(providerURL).then((res) => res.json()).then((res) => res.results.BR);
+    const providerData = await fetch(providerURL).then((res) => res.json());
     
 
-    const data = {...movieData, providers: providerData}
-    // console.log(data)
+    const data = {
+        ...movieData,
+         providers: providerData.BR != null ? providerData.BR : []
+    }
+    console.log(data.providers)
 
     res.json(data);
     
