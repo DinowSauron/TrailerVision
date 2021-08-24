@@ -74,6 +74,7 @@ export default function AsideDetails() {
                 priority={true}
                 layout="fill"
                 src={photoOriginalUrl + selectedMovie.backdrop_path}
+                alt={`${selectedMovie.title} - Banner`}
               />
             </span>
             

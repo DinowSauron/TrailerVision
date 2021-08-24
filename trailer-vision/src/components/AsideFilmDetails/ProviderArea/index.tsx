@@ -23,9 +23,6 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
         providersList.push(...providers.rent);
     }
     const allProviders: [providerInfo] = providersList as [providerInfo];
-    if(allProviders.length <2){
-        return (<></>);
-    }
 
 
     
@@ -65,6 +62,11 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
     useEffect(() => {
         resetProviders(actualTypeId);
     }, [selectedMovie])
+    
+    
+    if(allProviders.length <2){
+        return (<></>);
+    }
 
     return ( 
     <div className={styles.container}>

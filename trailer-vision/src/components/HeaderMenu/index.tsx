@@ -18,7 +18,7 @@ export default function HeaderMenu(){
                 />
             </span>
 
-            <a href="https://www.themoviedb.org/" target="_blank">
+            <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
                 <span className={styles.secondLogo + " img"}>
                     <Image
                         layout="fill"

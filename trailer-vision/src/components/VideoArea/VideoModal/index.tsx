@@ -20,7 +20,7 @@ export default function VideoModal({video, closeFunction}: VideoModalProps) {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                 >
-                    <a href={`https://www.youtube.com/watch?v=${video.key}`} target="_blank">See On Youtube</a>
+                    <a href={`https://www.youtube.com/watch?v=${video.key}`} target="_blank" rel="noreferrer">See On Youtube</a>
                 </iframe>
             </div>
 

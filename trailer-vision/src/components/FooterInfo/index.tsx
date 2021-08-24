@@ -18,7 +18,7 @@ export default function FooterInfo(){
                 </a>
               </li>
               <li>
-                <a href="https://www.themoviedb.org/" target="_blank">
+                <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
                   The Movie Database
                 </a>
               </li>
