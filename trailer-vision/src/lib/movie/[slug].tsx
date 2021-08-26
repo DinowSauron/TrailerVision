@@ -6,8 +6,8 @@ import React from "react";
 import AsideDetails from "../../components/AsideFilmDetails";
 import HeaderMenu from "../../components/HeaderMenu";
 import { Seo } from "../../components/Seo/Seo";
-import { getImportantPaths } from "../../lib/getIndexData"
-import { MovieProps } from "../../lib/movieTypes";
+import { getImportantPaths } from "../getIndexData"
+import { MovieProps } from "../movieTypes";
 import style from "../../styles/movie.module.scss" 
 
 
@@ -49,9 +49,10 @@ export default function Movie({movie}: MovieProps){
     )
 }
 
+
 export const getStaticPaths: GetStaticPaths = async () => {
     // para pre-renderizar as rotas mais impoortantes
-
+    
     const data = await getImportantPaths();
 
     const paths = data.results.map(movie => {
@@ -67,6 +68,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         fallback: "blocking"
     }
 }
+
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
     const slug  = params?.slug || "";
