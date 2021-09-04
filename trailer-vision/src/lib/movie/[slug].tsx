@@ -1,11 +1,11 @@
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import { seoImageProps } from "../../components/Seo/Seo";
+import { seoImageProps } from "../../components/Seo";
 import React from "react";
 import AsideDetails from "../../components/AsideFilmDetails";
 import HeaderMenu from "../../components/HeaderMenu";
-import { Seo } from "../../components/Seo/Seo";
+import { Seo } from "../../components/Seo";
 import { getImportantPaths } from "../getIndexData"
 import { MovieProps } from "../movieTypes";
 import style from "../../styles/movie.module.scss" 

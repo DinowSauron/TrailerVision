@@ -68,7 +68,7 @@ export default function Home(props: HomeProps) {
 import { GetStaticProps } from "next";
 import { GetIndexData } from "../lib/getIndexData"
 import React, { useContext } from 'react';
-import { Seo } from '../components/Seo/Seo';
+import { Seo } from '../components/Seo';
 
 export const getStaticProps: GetStaticProps = async () => {
 
