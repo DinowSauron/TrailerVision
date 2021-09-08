@@ -26,12 +26,17 @@ export default function AsideDetails() {
 
     function getMovieTimeString(time: number){
         const hours = Math.floor(time / 60);
-        const minutes = time - 60 * hours
+        const minutes = time - 60 * hours;
+        
         if(minutes === 0) {
-            return `${hours}h`
+            if(hours === 0) {
+              return "";
+            }
+
+            return `${hours}h`;
         }
 
-        return `${hours}h ${minutes}min`
+        return `${hours}h ${minutes}min`;
     }
 
     function getBackgroundVoteColor(vote: number) {

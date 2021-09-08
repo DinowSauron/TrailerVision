@@ -8,12 +8,12 @@ export default function FooterInfo(){
         <footer className={styles.main}>
             <ul>
               <li>
-                <a href="#">
+                <a href="https://github.com/DinowSauron/TrailerVision/blob/main/LICENSE" target="_blank" rel="noreferrer">
                   &copy; COPYRIGHT 2021
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://github.com/DinowSauron/TrailerVision" target="_blank" rel="noreferrer">
                   REPOSITORIO NO GITHUB
                 </a>
               </li>
