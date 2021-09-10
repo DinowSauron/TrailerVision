@@ -5,13 +5,20 @@ import styles from "./cast-area.module.scss"
 export default function CastArea(props: CastAreaProps){
     const photoHalfUrl = "https://image.tmdb.org/t/p/w200";
 
-    const casts = props.credits.cast.map((cast) => {
+    const casts = props.credits.cast.map((cast, index) => {
+        if (index >= 28) {
+            return undefined;
+        }
         if (cast.profile_path != null) {
             return cast;
         }
+    })
+    .filter(cast => {
+        return cast !== undefined;
     });
 
-    // console.log(casts);
+
+
 
     return (
         <div className={styles.castContainer}>
@@ -20,13 +27,10 @@ export default function CastArea(props: CastAreaProps){
             <section>
                 <ul>
                     {casts.map((cast, index) => {
-                        if(index > 28) {
-                            return <></>;
-                        }
                         return (
                         cast ? (
                         <li 
-                            key={cast.cast_id.toString()}
+                            key={index.toString()}
                             title={`${cast.name}  |  ${cast.character}`}
                         >
                             <span className={styles.castImg + " img"}>

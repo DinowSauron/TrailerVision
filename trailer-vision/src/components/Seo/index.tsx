@@ -19,12 +19,12 @@ interface seoProps {
     siteTitle: string;
     siteName?: string;
     pageUrl?: string;
-    image?: seoImageProps;
+    image?: seoImageProps | null;
     description?: string;
     keywords?: string;
     twitterId?: string; // With @
     language?: string;
-    video?: seoVideoProps;
+    video?: seoVideoProps | null;
 }
 
 
@@ -44,11 +44,7 @@ const Configs = {
         height: "200",
         alt: "Site Logo",
     },
-    video: { // not embed
-        rawUrl: "",
-        width: "400",
-        height: "900",
-    },
+    video: null,
 
     googleVerification: "",
 }

@@ -10,7 +10,6 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
     const photoHalfUrl = "https://image.tmdb.org/t/p/w200";
     const {selectedMovie} = useContext(ViewMovieContext);
 
-
     var insertedProviders: [string] = [""];
     var providersList = [];
     if(providers.flatrate) {
@@ -22,6 +21,7 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
     if(providers.rent) {
         providersList.push(...providers.rent);
     }
+
     const allProviders: [providerInfo] = providersList as [providerInfo];
 
 
