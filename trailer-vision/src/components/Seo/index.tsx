@@ -38,7 +38,7 @@ const Configs = {
     language: "pt-BR",
     image: {
         rawUrl: process.env.NEXT_PUBLIC_ABSOLUTE_URL + "/icons/site-logo.svg",
-        type: "image/png",
+        type: "image/svg+xml", // svg: image/svg+xml / png: image/png
         width: "200",
         height: "200",
         alt: "Site Logo",
