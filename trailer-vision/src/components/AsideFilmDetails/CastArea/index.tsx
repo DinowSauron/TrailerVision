@@ -35,7 +35,9 @@ export default function CastArea(props: CastAreaProps){
                         >
                             <span className={styles.castImg + " img"}>
                                 <a href="#">
-                                <Image
+                                <Image 
+                                    blurDataURL="/img/loading-buffering.gif" 
+                                    placeholder="blur"
                                     layout="fill"
                                     src={photoHalfUrl + cast.profile_path}
                                     alt={`${cast.known_for_department}: ${cast.original_name}`}

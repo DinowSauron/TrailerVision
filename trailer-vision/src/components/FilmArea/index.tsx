@@ -89,7 +89,7 @@ export default function FilmArea(props: FilmAreaProps){
           <Image
             layout="fill"
             src="/img/play.png"
-            alt="Go To Left"
+            alt="Go To Right"
           />
         </span>
       </div>

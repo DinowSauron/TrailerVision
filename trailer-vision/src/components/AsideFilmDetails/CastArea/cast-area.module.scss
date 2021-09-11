@@ -36,11 +36,17 @@
             height: 230px;
             background: var(--gradientLinear);
             border-radius: 8px;
+            transition: filter .2s;
+
             div{
                 border-radius: 8px;
                 transform: scale(.98);
                 height: 180px;
                 background-color: var(--background);
+            }
+            
+            &:hover {
+                filter: brightness(1.14);
             }
         }
 
@@ -65,11 +71,11 @@
             overflow: hidden;
         }
     }
-
     
     section {
         width: 100%;
         overflow-x: scroll;
 
     }
+
 }

@@ -64,7 +64,7 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
     }, [selectedMovie])
     
     
-    if(allProviders.length <2){
+    if(allProviders.length < 1){
         return (<></>);
     }
 
@@ -106,7 +106,9 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
                     key={provider.provider_id.toString()}
                     title={provider.provider_name}>
                     <span className={styles.providerImg + " img"}>
-                        <Image
+                        <Image 
+                            blurDataURL="/img/loading-buffering.gif" 
+                            placeholder="blur"
                             layout="fill"
                             src={photoHalfUrl + provider.logo_path}
                             alt={"Provedor: " + provider.provider_name}

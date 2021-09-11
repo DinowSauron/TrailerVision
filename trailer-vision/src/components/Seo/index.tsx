@@ -27,18 +27,17 @@ interface seoProps {
     video?: seoVideoProps | null;
 }
 
-
 // Fill the default values here:
 const Configs = {
     siteTitle: "TrailerVision",
     siteName: "Trailer Vision",
-    pageUrl: process.env.ABSOLUTE_URL,
+    pageUrl: process.env.NEXT_PUBLIC_ABSOLUTE_URL,
     description: "Aqui você encontra os trailers e informações de diversos filmes, além de visualizar os trailers deles e onde é possível assisti-los",
     keywords: "Filme,Trailer,Strem,Assistir,Encontrar filmes,Lançamentos,Home,pagina inicial,procurar",
     twitterId: "@", // With @
     language: "pt-BR",
     image: {
-        rawUrl: process.env.ABSOLUTE_URL + "/icons/site-logo.svg",
+        rawUrl: process.env.NEXT_PUBLIC_ABSOLUTE_URL + "/icons/site-logo.svg",
         type: "image/png",
         width: "200",
         height: "200",
