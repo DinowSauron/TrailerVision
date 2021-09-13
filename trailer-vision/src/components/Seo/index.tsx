@@ -37,8 +37,8 @@ const Configs = {
     twitterId: "@", // With @
     language: "pt-BR",
     image: {
-        rawUrl: process.env.NEXT_PUBLIC_ABSOLUTE_URL + "/icons/site-logo.svg",
-        type: "image/svg+xml", // svg: image/svg+xml / png: image/png
+        rawUrl: process.env.NEXT_PUBLIC_ABSOLUTE_URL + "/icons/site-logo.png",
+        type: "image/png", // svg: image/svg+xml / png: image/png
         width: "200",
         height: "200",
         alt: "Site Logo",
@@ -123,6 +123,8 @@ export function Seo(props: seoProps){
                 <title>{siteTitle}</title>
                 <meta property="description" content={description}/>
                 <link rel="canonical" href={process.env.ABSOLUTE_URL}></link>
+                {/* Google Verification */}
+                <meta name="google-site-verification" content="Z-UjI3t9GdfNDXgiH3K-rd3B3prJrkZ3TLm0M1e1xVM" />
             </Head>
         </div>
     );
