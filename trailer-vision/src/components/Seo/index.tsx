@@ -45,7 +45,7 @@ const Configs = {
     },
     video: null,
 
-    googleVerification: "",
+    googleVerification: "Z-UjI3t9GdfNDXgiH3K-rd3B3prJrkZ3TLm0M1e1xV",
 }
 
 /**
@@ -88,6 +88,7 @@ export function Seo(props: seoProps){
                     <meta data-react-helmet="true" property="og:image" content={image.rawUrl}/>
                     <meta property="og:image:url" content={image.rawUrl}/>
                     <meta property="og:image" content={image.rawUrl}/>
+                    <meta property="image_src" content={image.rawUrl}/>
                     <meta property="og:image:type" content={image.type}/>
                     <meta property="og:image:width" content={image.width}/>
                     <meta property="og:image:height" content={image.height}/>
@@ -103,6 +104,7 @@ export function Seo(props: seoProps){
 
                 {/* Twitter Graph */ }
                 <meta data-react-helmet="true" property="twitter:image" content={image.rawUrl}/>
+                <meta property="twitter:url" content={process.env.ABSOLUTE_URL}/>
                 <meta property="twitter:image" content={image.rawUrl}/>
                 <meta property="twitter:card" content="summary_large_image"/>
                 <meta property="twitter:title" content={siteName}/>
@@ -123,8 +125,6 @@ export function Seo(props: seoProps){
                 <title>{siteTitle}</title>
                 <meta property="description" content={description}/>
                 <link rel="canonical" href={process.env.ABSOLUTE_URL}></link>
-                {/* Google Verification */}
-                <meta name="google-site-verification" content="Z-UjI3t9GdfNDXgiH3K-rd3B3prJrkZ3TLm0M1e1xVM" />
             </Head>
         </div>
     );
