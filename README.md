@@ -50,7 +50,7 @@ OBS: note que não é um tutorial de como executar a aplicação, isto são os c
 
 * ``yarn create next-app trailer-vision --typescript``
 * ``cd trailer vision``
-* ``yarn add sass``
+* ``yarn add sass --dev``
 
 ## Licença:
 Note que este projeto está sob a licensa MIT. Veja o arquivo para mais detalhes: <a href="/LICENSE">LICENSE</a>
