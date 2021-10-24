@@ -6,7 +6,7 @@ export default function HeaderMenu(){
 
     return(
         <div className={styles.main}>
-            <div className={styles.headerBar}>
+            {/* <div className={styles.headerBar}>
             <button>
                 <div/>
             </button>
@@ -18,8 +18,10 @@ export default function HeaderMenu(){
                     src="/icons/main-logo.svg"
                     alt="Trailer Vision Logo"
                 />
-            </span>
+            </span> colcoar dentro da div.
 
+            
+            </div> */}
             <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
                 <span className={styles.secondLogo + " img"}>
                     <Image 
@@ -32,8 +34,6 @@ export default function HeaderMenu(){
                     />
                 </span>
             </a>
-            </div>
-            
 
         </div>
     )
