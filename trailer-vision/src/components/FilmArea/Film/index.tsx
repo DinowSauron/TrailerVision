@@ -29,7 +29,7 @@ export default function FilmArea(props: FilmAreaProps){
             onClick={() => handleSelectedMovie({movie: movie})}
         >
             <span className={styles.filmPoster + " img"} >
-                <Image 
+                <Image unoptimized 
                     blurDataURL="/img/loading-buffering.gif" 
                     placeholder="blur"
                     layout="fill"
@@ -39,7 +39,7 @@ export default function FilmArea(props: FilmAreaProps){
             </span>
             <h3>{movie.title}</h3>
             <span className={styles.filmBanner + " img"}>
-                <Image 
+                <Image unoptimized 
                     blurDataURL="/img/loading-buffering.gif" 
                     placeholder="blur"
                     layout="fill"

@@ -25,7 +25,7 @@ export default function VideoView({video}: VideoViewProps){
             >
                 <h4>{video.name}</h4>
                 <span className={styles.bannerImg + " img"}>
-                    <Image 
+                    <Image unoptimized 
                         blurDataURL="/img/loading-buffering.gif" 
                         placeholder="blur" 
                         layout="fill" 

@@ -75,7 +75,7 @@ export default function AsideDetails() {
             <span className={styles.posterImg + " img"}>
               <span className={styles.leftBarrier}></span>
               <span className={styles.downBarrier}></span>
-              <Image 
+              <Image unoptimized 
                 blurDataURL="/img/loading-buffering.gif" 
                 placeholder="blur"
                 priority={true}

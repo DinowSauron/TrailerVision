@@ -11,7 +11,7 @@ export default function HeaderMenu(){
                 <div/>
             </button>
             <span className={styles.mainLogo + " img"}>
-                <Image 
+                <Image unoptimized 
                     blurDataURL="/img/loading-buffering.gif" 
                     placeholder="blur"
                     layout="fill"
@@ -24,7 +24,7 @@ export default function HeaderMenu(){
             </div> */}
             <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer">
                 <span className={styles.secondLogo + " img"}>
-                    <Image 
+                    <Image unoptimized 
                         blurDataURL="/img/loading-buffering.gif" 
                         placeholder="blur"
                         layout="fill"

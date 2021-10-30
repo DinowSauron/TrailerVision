@@ -106,7 +106,7 @@ export default function ProviderArea({providers}: ProviderAreaProps) {
                     key={provider.provider_id.toString()}
                     title={provider.provider_name}>
                     <span className={styles.providerImg + " img"}>
-                        <Image 
+                        <Image unoptimized 
                             blurDataURL="/img/loading-buffering.gif" 
                             placeholder="blur"
                             layout="fill"

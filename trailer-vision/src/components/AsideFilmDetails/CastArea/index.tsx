@@ -35,7 +35,7 @@ export default function CastArea(props: CastAreaProps){
                         >
                             <span className={styles.castImg + " img"}>
                                 <a href="#">
-                                <Image 
+                                <Image unoptimized 
                                     blurDataURL="/img/loading-buffering.gif" 
                                     placeholder="blur"
                                     layout="fill"

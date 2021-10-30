@@ -73,7 +73,7 @@ export default function FilmArea(props: FilmAreaProps){
           className="img"
           onClick={() => handleScrollSection("Left")}
         >
-          <Image
+          <Image unoptimized
             layout="fill"
             src="/img/play.png"
             alt="Go To Left"
@@ -86,7 +86,7 @@ export default function FilmArea(props: FilmAreaProps){
           className="img"
           onClick={() => handleScrollSection("Right")}
         >
-          <Image
+          <Image unoptimized
             layout="fill"
             src="/img/play.png"
             alt="Go To Right"
